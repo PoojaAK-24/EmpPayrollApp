@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    height: 100%;
+}
+.header
+{
+    padding: 15px 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid black;
+
+}
+.logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid green;
+    width: 80%;
+}
+.logo>img{
+    border: 0px solid green;
+}
+.logo_text,.logo_text_payroll
+{
+    font: normal normal bold 20px/25px Montserrat;
+    font-family:"Montserrat",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: orange;
+    line-height: 20px;
+     
+}
+.logo_text_payroll
+{
+    color: darkgrey;
+}
