@@ -80,6 +80,7 @@ body
     flex-direction: row;
     margin-bottom: 10px;
     align-items: center;
+    
 
 }
 .form_input_label
@@ -108,4 +109,43 @@ body
 {
     
     border:1px solid #42515f;
+}
+.profile_pictures
+{
+    display: flex;
+    flex-direction: row;
+}
+.profile_pictures>label
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profile
+{
+    border-radius: 50%;
+   
+}
+@media only screen and (max-width: 1200px) {
+    .form_input_label
+    {
+        min-width: 60px;
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+    
+}
+@media only screen and (max-width: 700px) {
+    .form_input_content
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    .profile_pictures
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }
