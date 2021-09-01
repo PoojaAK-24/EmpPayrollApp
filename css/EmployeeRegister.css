@@ -140,6 +140,19 @@ body
 {
    width: 90%;
 }
+select
+{
+    padding: 5px 12px 5px 12px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+    font-family:cursive;
+    color: #42515f;
+    background-color: transparent;
+    min-width: 100px;
+    outline: none;
+}
 @media only screen and (max-width: 1200px) {
     .form_input_label
     {
@@ -161,5 +174,8 @@ body
     {
         display: flex;
         flex-direction: column;
+    }
+    select{
+        margin-bottom: 10px;
     }
 }
