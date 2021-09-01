@@ -21,7 +21,7 @@
             </div>
         </div>
     </header>
-    <!---------------------------------UC2-Unput Form--------------------------------------------->
+    <!---------------------------------UC2-Input Form--------------------------------------------->
     <div class="InputForm">
         <form class="form" action="#" onsubmit="SaveDetails(); return false;">
             <span class="form_header">Employee Payroll Register</span>
@@ -29,8 +29,9 @@
                 <label class="form_input_label text" for="empName">Employee Name</label>
                 <input type="text" class="input" name="empName" id="empName" placeholder="Enter Name Here" required>
             </div>
+            <!----------------------UC3------------------------------------>
             <div class="form_input_content">
-                <label class="form_input_label text" for="empName">Profile Pic</label>
+                <label class="form_input_label text" for="profiles">Profile Pic</label>
                 <div class="profile_pictures">
                     <label class="form_input_label">
                             <input type="radio" name="profile" id="profile1" value="../assets/profile-images/Ellipse -1.png" required>
@@ -51,6 +52,49 @@
             
                 </div>
             </div>
+            <div class="form_input_content">
+                <label class="form_input_label text" for="gender">Gender</label>
+                <div class="form_gender">
+                    <label class="form_input_label text">
+                        <input type="radio" name="gender" id="genderMale" value="male" required>&nbsp Male
+                    </label>
+                    <label class="form_input_label text">
+                        <input type="radio" name="gender" id="genderFemale" value="female" required>&nbspFemale
+                    </label>
+                    <label class="form_input_label text">
+                        <input type="radio" name="gender" id="genderOther" value="others" required>&nbspOthers
+                    </label>
+                </div>
+            </div>
+            <div class="form_input_content">
+                <label class="form_input_label text" for="Department">Department</label>
+                <div class="form_checkboxes">
+                    <input type="checkbox" name="hr" id="hr" value="hr" required>
+                    <label class="text" for="hr">HR</label>
+                </div>
+                <div class="form_checkboxes">
+                    <input type="checkbox" name="sales" id="sales" value="sales" required>
+                    <label class="text" for="sales">Sales</label>
+                </div>
+                <div class="form_checkboxes">
+                    <input type="checkbox" name="finance" id="finance" value="finance" required>
+                    <label class="text" for="finance">Finance</label>
+                </div>
+                <div class="form_checkboxes">
+                    <input type="checkbox" name="engineer" id="engineer" value="engineer" required>
+                    <label class="text" for="engineer">Engineer</label>
+                </div>
+                <div class="form_checkboxes">
+                    <input type="checkbox" name="others" id="others" value="others" required>
+                    <label class="text" for="others">Others</label>
+                </div>
+            </div>
+            <div class="form_input_content">
+                <label class="form_input_label text" for="salary">Salary</label>
+                <input type="range" name="salary" id="salary" class="salary" min="300000" max="600000" step="500" value="450000" required>
+                <output id="salaryOutput" class="text">450000</output>
+            </div>
+            
         </form>
     </div>
     
