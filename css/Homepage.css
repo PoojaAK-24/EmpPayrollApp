@@ -1,10 +1,13 @@
 *{
     box-sizing: border-box;
+    
 }
 body
 {
-    margin: 0;
+    margin: 0 auto;
     height: 100%;
+    width: 100%;
+    background-color: #f7f7f7;
     
 }
 .header
@@ -43,4 +46,124 @@ body
 .logo_text_payroll
 {
     color: darkgrey;
+}
+/*******************************************UC-2****************************************************************/
+.add_button
+{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+    color: white;
+    background-color: orange;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 3px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.add_button:hover{
+    transform: scale(1.1);
+}
+.icons
+{
+    width: 16px;
+}
+.Main_Container
+{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh-80px);
+    background-color: #f7f7f7;
+    padding: 30px 0 10px;
+    box-sizing: border-box;
+    width: 95%;
+    margin: 0 auto;
+}
+.header_container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    width: 98%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    
+}
+.header_text
+{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: darkslategray;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.emp_count
+{
+    color: white;
+    background-color: orange;
+    margin-left: 10px;
+    border-radius: 4px;
+    padding:1px;
+    font-size: 16px;
+    text-align: center;
+}
+/*******************************************UC-3****************************************************************/
+.profile
+{
+    border-radius: 50%;
+    width: 30px;
+}
+.table
+{
+    width: 100%;
+    border-spacing: 0 2px;
+}
+td,th{
+    text-align: left;
+    padding: 8px 8px;
+}
+th{
+    background: #42515f 0% 0% padding-box;
+    border-radius: 3px 3px 0px 0px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+}
+tr:not(:first-child){
+    background: white 0% 0% padding-box;
+    border:1px solid #e3e3e3;
+    border-radius: 3px;
+}
+td{
+    font-family: 'Roboto';
+    color: #3d3d3d;
+}
+td:first-child
+{
+    display: flex;
+    align-items: center;
+}
+td img:first-child
+{
+    margin-right: 10px;
+}
+td img{
+    cursor: pointer;
+}
+.dept_label
+{
+    background-color: #e9fea5;
+    border-radius: 40%;
+    width: fit-content;
+    padding: 1px 7px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 8px;
 }
