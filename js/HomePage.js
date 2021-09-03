@@ -33,8 +33,8 @@ let tableContents = `${tableHeader}`;
             <td>${emp._empSalary}</td>
             <td>${stringifyDate(emp._startDate)}</td>
             <td>
-                <img id="${emp._empId}" src="../assets/icons/delete-black-18dp.svg" class="profile" onclick="deleteEmployee(this)" alt="delete" />
-                <img id="${emp._empId}" src="../assets/icons/create-black-18dp.svg" class="profile" onclick="updateEmployee(this)" alt="edit" />
+                <img id="${emp.id}" src="../assets/icons/delete-black-18dp.svg" class="profile" onclick="deleteEmployee(this)" alt="delete" />
+                <img id="${emp.id}" src="../assets/icons/create-black-18dp.svg" class="profile" onclick="updateEmployee(this)" alt="edit" />
             </td>
         </tr>`;
     }
@@ -54,10 +54,10 @@ let getDept = (deptArr) =>
 /********************************************Delete Employee*************************************/
 let deleteEmployee = (employee) =>
 {
-    let empData  = employeePayrollList.find(x => x._empId == employee.id);
+    let empData  = employeePayrollList.find(x => x.id == employee.id);
     if(!empData)
         return;
-    const index = employeePayrollList.map(x => x._empId).indexOf(empData._empId);
+    const index = employeePayrollList.map(x => x.id).indexOf(empData.id);
     employeePayrollList.splice(index,1);
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
     document.getElementById('emp_count').innerHTML = employeePayrollList.length;
@@ -66,7 +66,7 @@ let deleteEmployee = (employee) =>
 /********************************************Update Employee*************************************/
 let updateEmployee = (employee) =>
 {
-    let empData  = employeePayrollList.find(x => x._empId == employee.id);
+    let empData  = employeePayrollList.find(x => x.id == employee.id);
     if(!empData)
         return;
     localStorage.setItem("editEmp",JSON.stringify(empData));

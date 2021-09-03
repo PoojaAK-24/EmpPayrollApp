@@ -1,52 +1,66 @@
 {
-    "employee": [
+    "EmployeePayrollDB": [
       {
-        "name": "mohit kumar new",
-        "gender": "male",
-        "departMent": [
-          "HR"
+        "id": 1,
+        "_name": "Pooja",
+        "_gender": "Female",
+        "_department": [
+          "Engineering",
+          "Finance"
         ],
-        "salary": "30000",
-        "startDate": "1 Jan 2020",
-        "notes": "",
-        "id": 1604589551457,
-        "profileUrl": "../assets/profile-images/Ellipse 1.png"
+        "_salary": "500000",
+        "_startDate": "15 August 2021",
+        "_note": "All In One",
+        "_profilePic": "../assests/profile-images/Ellipse -2.png"
       },
       {
-        "name": "mohit kumar test",
-        "gender": "male",
-        "departMent": [
-          "HR"
+        "id": 2,
+        "_name": "Ronaldo",
+        "_gender": "male",
+        "_department": [
+          "Engineering"
         ],
-        "salary": "30000",
-        "startDate": "1 Jan 2020",
-        "notes": "",
-        "id": 1604589594363,
-        "profileUrl": "../assets/profile-images/Ellipse 1.png"
+        "_salary": "500000",
+        "_startDate": "20 August 2021",
+        "_note": "qweryt",
+        "_profilePic": "../assests/profile-images/Ellipse -3.png"
       },
       {
-        "name": "mohit",
-        "gender": "male",
-        "departMent": [
-          "HR"
+        "_name": "Nayantara",
+        "_gender": "female",
+        "_department": [
+          "Sales"
         ],
-        "salary": "30000",
-        "startDate": "1 Jan 2020",
-        "notes": "",
-        "id": 1604589699566,
-        "profileUrl": "../assets/profile-images/Ellipse -3.png"
+        "_salary": "400000",
+        "_startDate": "12 August 2021",
+        "_note": "Actress",
+        "_profilePic": "../assests/profile-images/Ellipse -1.png",
+        "id": 3
       },
       {
-        "name": "test",
-        "gender": "male",
-        "departMent": [
-          "HR"
+        "id": "4",
+        "_name": "Trisha",
+        "_profilePic": "../assests/profile-images/Ellipse -4.png",
+        "_gender": "Female",
+        "_department": [
+          "Finance",
+          "Engineer"
         ],
-        "salary": "30000",
-        "startDate": "1 Jan 2020",
-        "notes": "",
-        "id": 1604589731061,
-        "profileUrl": "../assets/profile-images/Ellipse -3.png"
+        "_salary": "424400",
+        "_notes": "hreoine",
+        "_startDate": "18 August 2021"
+      },
+      {
+        "id": "5",
+        "_name": "Dhoni",
+        "_profilePic": "../assests/profile-images/Ellipse -4.png",
+        "_gender": "male",
+        "_department": [
+          "Engineer"
+        ],
+        "_salary": "419100",
+        "_notes": "finisher",
+        "_startDate": "20 August 2021"
       }
     ]
   }

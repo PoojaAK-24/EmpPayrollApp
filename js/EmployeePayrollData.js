@@ -1,13 +1,13 @@
 class EmployeePayrollData
 {
-    get empId()
+    get id()
     {
-        return this._empId;
+        return this._id;
     }
-    set empId(id)
+    set id(id)
     {
         if(id!=null)
-            this._empId = id;
+            this._id = id;
         else
             throw `id Value is null`;
     }
@@ -104,7 +104,7 @@ class EmployeePayrollData
     //to string method
     toString()
     {
-        return `Id = ${this._empId} Name = ${this._empName} Gender = ${this._empGender} Profile Pic = ${this._empProfilePic} Dept = ${this._empDept} Salary = ${this._empSalary} Date = ${this._startDate} Notes = ${this._notes}`;
+        return `Id = ${this._id} Name = ${this._empName} Gender = ${this._empGender} Profile Pic = ${this._empProfilePic} Dept = ${this._empDept} Salary = ${this._empSalary} Date = ${this._startDate} Notes = ${this._notes}`;
     }
 
     
