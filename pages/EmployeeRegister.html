@@ -23,7 +23,7 @@
     </header>
     <!---------------------------------UC2-Input Form--------------------------------------------->
     <div class="InputForm">
-        <form class="form" action="#" onsubmit="save(); return false;" onreset="resetForm() ;return false;">
+        <form class="form" action="#" onsubmit="save(event); return false;" onreset="resetForm() ;return false;">
             <span class="form_header">Employee Payroll Register</span>
             <div class="form_input_content">
                 <label class="form_input_label text" for="empName">Employee Name</label>
@@ -175,5 +175,7 @@
     </div>
     <script type="text/javascript" src="../js/EmployeePayrollData.js"></script>
     <script type="text/javascript" src="../js/EmployeeRegister.js"></script>
+    <script type="text/javascript" src="../js/SiteProperties.js"></script>
+    <script type="text/javascript" src="../js/Utility.js"></script>
 </body>
 </html>

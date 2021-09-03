@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     employeePayrollList = getDataFromLocalStorage();
     document.getElementById('emp_count').innerHTML = employeePayrollList.length;
     createTableContents();
+    localStorage.removeItem('editEmp');
 });
 let getDataFromLocalStorage = () =>
 {
@@ -32,8 +33,8 @@ let tableContents = `${tableHeader}`;
             <td>${emp._empSalary}</td>
             <td>${stringifyDate(emp._startDate)}</td>
             <td>
-                <img id="${emp._empName}" src="../assets/icons/delete-black-18dp.svg" class="profile" onclick="deleteEmployee(this)" alt="delete" />
-                <img src="../assets/icons/create-black-18dp.svg" class="profile" alt="edit" />
+                <img id="${emp._empId}" src="../assets/icons/delete-black-18dp.svg" class="profile" onclick="deleteEmployee(this)" alt="delete" />
+                <img id="${emp._empId}" src="../assets/icons/create-black-18dp.svg" class="profile" onclick="updateEmployee(this)" alt="edit" />
             </td>
         </tr>`;
     }
@@ -50,15 +51,24 @@ let getDept = (deptArr) =>
     return deptHtml;
 }
 
-/********************************************Delete employee ************************************/
+/********************************************Delete Employee*************************************/
 let deleteEmployee = (employee) =>
 {
-    let empData  = employeePayrollList.find(x => x._empName == employee.id);
+    let empData  = employeePayrollList.find(x => x._empId == employee.id);
     if(!empData)
         return;
-    const index = employeePayrollList.map(x => x._empName).indexOf(empData._empName);
+    const index = employeePayrollList.map(x => x._empId).indexOf(empData._empId);
     employeePayrollList.splice(index,1);
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
     document.getElementById('emp_count').innerHTML = employeePayrollList.length;
     createTableContents();
+}
+/********************************************Update Employee*************************************/
+let updateEmployee = (employee) =>
+{
+    let empData  = employeePayrollList.find(x => x._empId == employee.id);
+    if(!empData)
+        return;
+    localStorage.setItem("editEmp",JSON.stringify(empData));
+    window.location.replace(siteProperties.register_page);
 }
