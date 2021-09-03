@@ -73,6 +73,7 @@ body
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
+    font-size: 30px;
     
 }
 .form_input_content
@@ -153,6 +154,47 @@ select
     min-width: 100px;
     outline: none;
 }
+.button_container
+{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.button
+{
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+    background: transparent;
+    border:none;
+    font-weight: 400;
+    min-width: 100px;
+    padding: 7px 7px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+.button:hover
+{
+    transform: scale(1.1);
+}
+
+.submit_button
+{
+    background: green;
+
+}
+.reset_button
+{
+    background: grey;
+    margin-left:10px ;
+}
+.error
+{
+    color: red;
+    font-style: italic;
+    font-size: 13px;
+}
 @media only screen and (max-width: 1200px) {
     .form_input_label
     {
@@ -177,5 +219,26 @@ select
     }
     select{
         margin-bottom: 10px;
+    }
+    .button_container
+    {
+        flex-direction: column-reverse;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .buttons>button
+    {
+        margin: 5px;
+        
+    }
+    .button
+    {
+        max-width: 120px;
+        margin: 5px;
+    }
+    .reset_button
+    {
+        
+        margin-left:0px ;
     }
 }

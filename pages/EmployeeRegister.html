@@ -28,6 +28,7 @@
             <div class="form_input_content">
                 <label class="form_input_label text" for="empName">Employee Name</label>
                 <input type="text" class="input" name="empName" id="empName" placeholder="Enter Name Here" required>
+                <error class="error" id="errorName"></error>
             </div>
             <!----------------------UC3------------------------------------>
             <div class="form_input_content">
@@ -57,7 +58,7 @@
                 <label class="form_input_label text" for="gender">Gender</label>
                 <div class="form_gender">
                     <label class="form_input_label text">
-                        <input type="radio" name="gender" id="genderMale" value="male" required>&nbsp Male
+                        <input type="radio" name="gender" id="genderMale" value="male" required>&nbspMale
                     </label>
                     <label class="form_input_label text">
                         <input type="radio" name="gender" id="genderFemale" value="female" required>&nbspFemale
@@ -71,23 +72,23 @@
             <div class="form_input_content">
                 <label class="form_input_label text" for="Department">Department</label>
                 <div class="form_checkboxes">
-                    <input type="checkbox" name="hr" id="hr" value="hr" required>
+                    <input type="checkbox" name="dept" id="hr" value="hr" required>
                     <label class="text" for="hr">HR</label>
                 </div>
                 <div class="form_checkboxes">
-                    <input type="checkbox" name="sales" id="sales" value="sales" required>
+                    <input type="checkbox" name="dept" id="sales" value="sales" required>
                     <label class="text" for="sales">Sales</label>
                 </div>
                 <div class="form_checkboxes">
-                    <input type="checkbox" name="finance" id="finance" value="finance" required>
+                    <input type="checkbox" name="dept" id="finance" value="finance" required>
                     <label class="text" for="finance">Finance</label>
                 </div>
                 <div class="form_checkboxes">
-                    <input type="checkbox" name="engineer" id="engineer" value="engineer" required>
+                    <input type="checkbox" name="dept" id="engineer" value="engineer" required>
                     <label class="text" for="engineer">Engineer</label>
                 </div>
                 <div class="form_checkboxes">
-                    <input type="checkbox" name="others" id="others" value="others" required>
+                    <input type="checkbox" name="dept" id="others" value="others" required>
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
@@ -95,12 +96,12 @@
             <div class="form_input_content">
                 <label class="form_input_label text" for="salary">Salary</label>
                 <input type="range" name="salary" id="salary" class="salary" min="300000" max="600000" step="500" value="450000" required>
-                <output id="salaryOutput" class="text">450000</output>
+                <output id="salaryOutput" class="text" value="450000"></output>
             </div>
             <!-----------------------------Start date-->
             <div class="form_input_content">
                 <label class="form_input_label text" for="startDate">Start Date</label>
-                <div>
+                <div id="date">
                     <select id="day" name="day">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -148,19 +149,31 @@
                         <option value="Nov">Nov</option>
                         <option value="Dec">Dec</option>
                     </select>
-                    <select>
+                    <select id="year" name="year">
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                     </select>
+                    <error id="errorDate" class="error" name="errorDate"></error>
                 </div>
             </div>
-            
+            <!----------------------------Notes------------------------------------>
+            <div class="form_input_content">
+                <label class="form_input_label text" for="notes">Notes</label>
+                <textarea rows="4" class="input" placeholder="Enter Any Notes or Comments here" id="notes" style="resize: none;" required></textarea>
+            </div>
+            <div class="button_container">
+                <a href="#" class="button" style="text-decoration: none;background-color: red;text-align: center;color:white">Cancel</a>
+                <div class="buttons">
+                    <button type="submit" class="submit_button button" id="submitButton">Submit</button>
+                    <button type="reset" class="reset_button button">Reset</button>
+                </div>
+            </div>
         </form>
     </div>
-    
-    <script type="text/javacript" src="../js/EmployeeRegister.js"></script>
+    <script type="text/javascript" src="../js/EmployeePayrollData.js"></script>
+    <script type="text/javascript" src="../js/EmployeeRegister.js"></script>
 </body>
 </html>
