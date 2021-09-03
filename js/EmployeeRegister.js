@@ -41,6 +41,82 @@ window.addEventListener('DOMContentLoaded', (event) => {
             errorDate.innerHTML=e;
         }
     });
-
-
 });
+
+/****************************************Save**********************************************************/
+const save=()=>
+{
+  try
+  {
+    let employeePayrollData=createEmployeePayroll();
+    createAndUpdateStorage(employeePayrollData);
+  }
+  catch(e)
+  {
+    return;
+  }
+}
+const createEmployeePayroll = () =>
+{
+    let employeePayrollData=new EmployeePayrollData();
+    try
+    {
+    employeePayrollData.empName=getById('empName').value;
+    }
+    catch(e)
+    {
+        getById('errorName').innerHTML = e;
+        throw e;
+    }
+    employeePayrollData.empProfilePic=getSelectedValues('[name=profile]').pop();
+    employeePayrollData.empGender=getSelectedValues('[name=gender]').pop();
+    employeePayrollData.empDept=getSelectedValues('[name=dept]');
+    employeePayrollData.empSalary=getById('salary').value;
+    employeePayrollData.notes=getById('notes').value;
+    let date=`${getById('day').value} ${getById('month').value} ${getById('year').value}`;
+
+    try
+    {
+        employeePayrollData.startDate=new Date(Date.parse(date));
+        getById('errorDate').innerHTML = "";
+    }
+    catch
+    {
+        getById('errorDate').innerHTML = e;
+        throw e;
+    }
+  //alert(employeePayrollData.toString());
+  return employeePayrollData;
+}
+//storing in local storage
+function createAndUpdateStorage(employeePayrollData)
+{
+  let employeePayrollList=JSON.parse(localStorage.getItem("EmployeePayrollList"));
+  if(employeePayrollList!=undefined)
+  {
+    employeePayrollList.push(employeePayrollData);
+  }
+  else{
+    employeePayrollList=[employeePayrollData];
+  }
+  alert("Successfully saved into local storage");
+  localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
+}
+
+const setTextValue=(id,value) =>
+{
+  const element=getById(id);
+  element.textContent=value;
+}
+
+const getSelectedValues=(proertyValue)=>
+{
+  let allItems=document.querySelectorAll(proertyValue);
+  let selectedItems=[];
+  allItems.forEach(item=>
+    {
+        if(item.checked)
+        selectedItems.push(item.value);
+    });
+    return selectedItems;
+}

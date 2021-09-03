@@ -74,7 +74,7 @@ class EmployeePayrollData
             var diff=Math.abs( now.getTime() - date.getTime());
             if(diff/(1000*60*60*24)>30) 
                 throw "Start date is beyond 30 days";
-                this._startDate = date;
+            this._startDate = date;
         }
         else
             throw `date Value is null`;
