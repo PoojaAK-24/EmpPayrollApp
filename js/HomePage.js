@@ -1,17 +1,13 @@
+let employeePayrollList ;
 window.addEventListener('DOMContentLoaded', (event) => {
+    employeePayrollList = getDataFromLocalStorage();
+    document.getElementById('emp_count').innerHTML = employeePayrollList.length;
     createTableContents();
 });
-let employeePayrollList = [
-    {
-        _empName:'Pooja',
-        _empGender:'Female',
-        _empDept:['Hr','Dev'],
-        _empSalary:'450000',
-        _startDate:'15 Dec 1999',
-        _notes:'',
-        _empProfilePic:'../assets/profile-images/Ellipse -5.png'
-    }
-]
+let getDataFromLocalStorage = () =>
+{
+    return localStorage.getItem("EmployeePayrollList")?JSON.parse(localStorage.getItem("EmployeePayrollList")):[];
+}
 let createTableContents = () =>
 {
     const tableHeader = `<tr>
@@ -36,8 +32,8 @@ let tableContents = `${tableHeader}`;
             <td>${emp._empSalary}</td>
             <td>${stringifyDate(emp._startDate)}</td>
             <td>
-                <img src="../assets/icons/delete-black-18dp.svg" alt="delete" />
-                <img src="../assets/icons/create-black-18dp.svg" alt="edit" />
+                <img src="../assets/icons/delete-black-18dp.svg" class="profile" alt="delete" />
+                <img src="../assets/icons/create-black-18dp.svg" class="profile" alt="edit" />
             </td>
         </tr>`;
     }

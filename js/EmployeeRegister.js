@@ -50,6 +50,7 @@ const save=()=>
   {
     let employeePayrollData=createEmployeePayroll();
     createAndUpdateStorage(employeePayrollData);
+    resetForm();
   }
   catch(e)
   {
@@ -129,7 +130,7 @@ const resetForm=() =>
   getById('day').value = 1;
   getById('month').value = 'Jan';
   getById('year').value = 2021;
-  alert("The Form has been reseted");
+  
 }
 /****************************Methods for reset*************************************/
 const setValue=(id,value)=>{

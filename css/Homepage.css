@@ -116,6 +116,10 @@ body
 {
     border-radius: 50%;
     width: 30px;
+    
+}
+.profile:hover{
+    transform: scale(1.1);
 }
 .table
 {
