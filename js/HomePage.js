@@ -32,7 +32,7 @@ let tableContents = `${tableHeader}`;
             <td>${emp._empSalary}</td>
             <td>${stringifyDate(emp._startDate)}</td>
             <td>
-                <img src="../assets/icons/delete-black-18dp.svg" class="profile" alt="delete" />
+                <img id="${emp._empName}" src="../assets/icons/delete-black-18dp.svg" class="profile" onclick="deleteEmployee(this)" alt="delete" />
                 <img src="../assets/icons/create-black-18dp.svg" class="profile" alt="edit" />
             </td>
         </tr>`;
@@ -48,4 +48,17 @@ let getDept = (deptArr) =>
         deptHtml = `${deptHtml}<span class="dept_label">${dept}</span>`;
     }
     return deptHtml;
+}
+
+/********************************************Delete employee ************************************/
+let deleteEmployee = (employee) =>
+{
+    let empData  = employeePayrollList.find(x => x._empName == employee.id);
+    if(!empData)
+        return;
+    const index = employeePayrollList.map(x => x._empName).indexOf(empData._empName);
+    employeePayrollList.splice(index,1);
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
+    document.getElementById('emp_count').innerHTML = employeePayrollList.length;
+    createTableContents();
 }

@@ -115,11 +115,11 @@ body
 .profile
 {
     border-radius: 50%;
-    width: 30px;
+    width: 26px;
     
 }
 .profile:hover{
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 .table
 {
