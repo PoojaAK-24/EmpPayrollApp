@@ -2,7 +2,7 @@ const getById = (id) =>
 {
     return document.querySelector(`#${id}`);
 }
-
+//**********************************************ADD event listener on content loaded */
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = getById('empName');
     const nameError =  getById('errorName');
@@ -56,6 +56,7 @@ const save=()=>
     return;
   }
 }
+/************Create list */
 const createEmployeePayroll = () =>
 {
     let employeePayrollData=new EmployeePayrollData();
@@ -103,12 +104,6 @@ function createAndUpdateStorage(employeePayrollData)
   localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 
-const setTextValue=(id,value) =>
-{
-  const element=getById(id);
-  element.textContent=value;
-}
-
 const getSelectedValues=(proertyValue)=>
 {
   let allItems=document.querySelectorAll(proertyValue);
@@ -119,4 +114,32 @@ const getSelectedValues=(proertyValue)=>
         selectedItems.push(item.value);
     });
     return selectedItems;
+}
+/******************************************RESET FORM******************************************************************/
+const resetForm=() =>
+{
+  setValue('#empName','');
+  unsetSelectedValues('[name=profile]');
+  unsetSelectedValues('[name=gender]');
+  unsetSelectedValues('[name=dept]');
+  setValue('#salary','');
+  getById('salaryOutput').value = 450000;
+  getById('errorDate').innerHTML = "";
+  setValue('#notes','');
+  getById('day').value = 1;
+  getById('month').value = 'Jan';
+  getById('year').value = 2021;
+  alert("The Form has been reseted");
+}
+/****************************Methods for reset*************************************/
+const setValue=(id,value)=>{
+    const element = document.querySelector(id);
+    element.value=value;
+  }
+  
+const unsetSelectedValues=(property)=>{
+    let allItems = document.querySelectorAll(property);
+    allItems.forEach(item=>{
+        item.checked=false;
+    });
 }
